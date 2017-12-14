@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro"
+       name="robotiq_c2_robot">
+
+  <xacro:include filename="$(find robotiq_c2_description)/urdf/robotiq_c2.xacro"/>
+
+  <xacro:robotiq_c2_model prefix=""/>
+
+  <link name="world"/>
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="robotiq_85_adapter_link"/>
+    <origin xyz="0 0 0.1" rpy="0 -1.5707 2.3"/>
+  </joint>
+
+</robot>

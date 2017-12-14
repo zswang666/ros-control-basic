@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robotiq_c2</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="mimic1" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>robotiq_85_left_knuckle_joint</joint>
+      <mimicJoint>robotiq_85_right_knuckle_joint</mimicJoint>
+      <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="mimic2" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>robotiq_85_left_knuckle_joint</joint>
+      <mimicJoint>robotiq_85_left_inner_knuckle_joint</mimicJoint>
+      <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="mimic3" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>robotiq_85_left_knuckle_joint</joint>
+      <mimicJoint>robotiq_85_right_inner_knuckle_joint</mimicJoint>
+      <multiplier>1</multiplier>
+    </plugin>
+    <plugin name="mimic4" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>robotiq_85_left_knuckle_joint</joint>
+      <mimicJoint>robotiq_85_left_finger_tip_joint</mimicJoint>
+      <multiplier>-1</multiplier> <!-- different multiplier seems to be the same here -->
+    </plugin>
+    <plugin name="mimic5" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+      <joint>robotiq_85_left_knuckle_joint</joint>
+      <mimicJoint>robotiq_85_right_finger_tip_joint</mimicJoint>
+      <multiplier>-1</multiplier> <!-- different multiplier seems to be the same here -->
+    </plugin>
+  </gazebo>
+
+</robot>
